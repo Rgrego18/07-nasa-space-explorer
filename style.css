@@ -108,6 +108,8 @@ button:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 /* Three columns on wider screens */
@@ -122,6 +124,13 @@ button:hover {
   height: 200px;
   object-fit: cover;
   border-radius: 4px;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Scale up the image slightly on hover */
+.gallery-item img:hover {
+  transform: scale(1.06);
+  z-index: 1;
 }
 
 .gallery-item p {
@@ -141,4 +150,120 @@ button:hover {
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+}
+
+/* Add to style.css */
+.apod-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.space-fact {
+  background: #0b3d91;
+  color: #fff;
+  font-family: 'Barlow', Arial, sans-serif;
+  font-size: 1.1em;
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin: 24px 0 0 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  padding: 24px 20px 20px 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.modal h2 {
+  margin: 10px 0 5px 0;
+  font-size: 1.4em;
+}
+
+.modal-date {
+  color: #888;
+  font-size: 1em;
+  margin-bottom: 12px;
+}
+
+.modal-explanation {
+  font-size: 1em;
+  color: #333;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 10px; right: 16px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+}
+.modal-close:hover {
+  color: #222;
+}
+
+/* Add a preview image for video thumbnails in the gallery */
+.video-preview {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+  background: #000;
+  display: block;
+  position: relative;
+}
+
+/* Add a play icon overlay for video previews */
+.video-play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #fff;
+  opacity: 0.85;
+  pointer-events: none;
+  text-shadow: 0 2px 8px #000;
+}
+
+/* Optional: scale effect on hover for video previews */
+.gallery-item .video-preview:hover {
+  transform: scale(1.06);
+  z-index: 1;
 }
